@@ -1,12 +1,10 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Header from './Header';
 import Slider from './Slider';
 import Categories from './Categories';
 import BusinessList from './BusinessList';
-import TabNavigation from '../Navigations/TabNavigation';
-import HomeScreen from '../Screens/HomeScreen/HomeScreen';
-
+import HomeNavigation from '../../Navigations/HomeNavigation';
 
 export default function HomeScreen() {
   return (
@@ -15,18 +13,16 @@ export default function HomeScreen() {
       <Header />
 
       {/* Main Content */}
-      <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-        <View style={styles.contentContainer}>
-          {/* Slider */}
-          <Slider />
+      <View style={styles.contentContainer}>
+        {/* Slider */}
+        <Slider />
 
-          {/* Categories */}
-          <Categories />
+        {/* Categories */}
+        <Categories />
 
-          {/* BusinessList */}
-          <BusinessList />
-        </View>
-      </ScrollView>
+        {/* BusinessList */}
+        <BusinessList />
+      </View>
     </View>
   );
 }
@@ -34,14 +30,11 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff', // Set your desired background color
-  },
-  scrollViewContainer: {
-    flexGrow: 1,
+    backgroundColor: '#fff',
   },
   contentContainer: {
-    paddingVertical: 20,
-    paddingHorizontal: 20,
+    flex: 1,
+    padding: 20,
   },
 });
 

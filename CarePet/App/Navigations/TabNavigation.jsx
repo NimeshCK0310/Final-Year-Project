@@ -1,46 +1,35 @@
-import React from 'react';
+import { View, Text } from 'react-native'
+import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import Colors from '../Utils/Colors';
-import HomeScreen from '../Screens/HomeScreen/HomeScreen';
+import HomeScreen from '../Screens/HomeScreeen/HomeScreen';
 import BookingScreen from '../Screens/BookingScreen/BookingScreen';
 import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
-import HomeNavigation from './HomeNavigation';
-import BookingNavigation from './BookingNavigation';
-
+import { FontAwesome } from '@expo/vector-icons';
 
 
 const Tab = createBottomTabNavigator();
-
 export default function TabNavigation() {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      {/* HomeScreen */}
-      <Tab.Screen
-        name="home"
-        component={HomeNavigation}
-        options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Home
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="home" size={size} color={color} />
-          ),
-        }}
-      />
+            <Tab.Navigator
+            screenOptions={{headerShown:false}}>
 
-      {/* BookingScreen */}
-      <Tab.Screen
-        name="booking"
-        component={BookingNavigation}
-        options={{
+              {/* HomeScreen */}
+              <Tab.Screen name="home" component={HomeScreen}
+              options={{
+                tabBarLabel: ({ color }) => (
+                  <Text style={{ color: color, fontSize: 12, marginTop: -2}}>
+                    Home
+                  </Text>
+                ),
+                tabBarIcon: ({ color, size }) => (
+                  <FontAwesome name="home" size={size} color={color} />
+                ),
+              }}
+              />
+
+              {/* BookingScreen */}
+              <Tab.Screen name="Booking" component={BookingScreen}
+                options={{
           tabBarLabel: ({ color }) => (
             <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
               Booking
@@ -50,13 +39,11 @@ export default function TabNavigation() {
             <FontAwesome name="bookmark" size={size} color={color} />
           ),
         }}
-      />
+              />
 
-      {/* ProfileScreen */}
-      <Tab.Screen
-        name="profile"
-        component={ProfileScreen}
-        options={{
+              {/* ProfileScreen */}
+              <Tab.Screen name="Profile" component={ProfileScreen}
+                options={{
           tabBarLabel: ({ color }) => (
             <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
               Profile
@@ -66,7 +53,10 @@ export default function TabNavigation() {
             <FontAwesome name="user" size={size} color={color} />
           ),
         }}
-      />
-    </Tab.Navigator>
-  );
+              />
+        
+      
+          
+            </Tab.Navigator>
+  )
 }
