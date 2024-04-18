@@ -5,6 +5,7 @@ import HomeScreen from '../Screens/HomeScreeen/HomeScreen';
 import BusinessListByCategoryScreen from '../Screens/BusinessListByCategoryScreen/BusinessListByCategoryScreen';
 import BusinessDetailsScreen from '../Screens/BusinessDetailsScreen/BusinessDetailsScreen';
 
+
 const Stack = createStackNavigator();
 
 export default function HomeNavigation() {

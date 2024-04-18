@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Colors from '../../Utils/Colors';
 import { useNavigation } from '@react-navigation/native';
 
@@ -10,18 +10,19 @@ export default function BusinessListItemSmall({ Business }) {
     return null; // Return null if Business object is not provided
   }
 
+  const handlePress = () => {
+    navigation.push('Business-detail', { business: Business });
+  };
+
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => navigation.push('Business-detail', { business: Business })}
-    >
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       <Image source={{ uri: Business?.image[0]?.url }} style={styles.image} />
 
-      <View style={styles.infoContainer}>
+      <ScrollView contentContainerStyle={styles.textContainer} showsVerticalScrollIndicator={false}>
         <Text style={styles.name}>{Business?.name}</Text>
         <Text style={styles.contactPerson}>{Business?.contactPerson}</Text>
         <Text style={styles.category}>{Business?.category?.name}</Text>
-      </View>
+      </ScrollView>
     </TouchableOpacity>
   );
 }
@@ -31,22 +32,39 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: Colors.White,
     borderRadius: 10,
-    flexDirection: 'row', // Ensure items are aligned horizontally
-    alignItems: 'center', // Center items vertically
+    overflow: 'hidden', // Hide any overflow content
     marginBottom: 10,
+    flexDirection: 'row', // Align items horizontally
+    alignItems: 'center', // Center items vertically
+    paddingHorizontal: 10,
+    paddingVertical: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
   },
-  infoContainer: {
-    flex: 1, // Allow the text content to expand
+  image: {
+    width: 140,
+    height: 120,
+    borderRadius: 10,
+    marginRight: 10,
+  },
+  textContainer: {
+    flex: 1,
     marginLeft: 10,
+    justifyContent: 'center',
   },
   name: {
-    fontSize: 17,
+    fontSize: 16,
     fontFamily: 'outfit-medium',
+    marginBottom: 4,
   },
   contactPerson: {
     fontSize: 13,
     fontFamily: 'outfit',
     color: Colors.Gray,
+    marginBottom: 4,
   },
   category: {
     fontSize: 12,
@@ -57,11 +75,5 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     alignSelf: 'flex-start',
     paddingHorizontal: 7,
-    marginTop: 5, // Add some top margin for separation
-  },
-  image: {
-    width: 160,
-    height: 100,
-    borderRadius: 10,
   },
 });

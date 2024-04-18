@@ -21,7 +21,7 @@ export default function Categories() {
     }
 
   return (
-    <View style ={{marginTop:10}}>
+    <View style ={{marginTop:20}}>
      <Heading text={'Categories'}  isViewAll={true}/>
 
      <FlatList

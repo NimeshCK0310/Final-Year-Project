@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
         paddingTop:40,
         backgroundColor:Colors.Blue,
         borderBottomLeftRadius:30,
-        borderBottomRightRadius:30
+        borderBottomRightRadius:30,
+        width:'100%'
     },
 
     profileMainContainer:{
