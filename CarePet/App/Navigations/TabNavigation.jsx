@@ -30,7 +30,7 @@ export default function TabNavigation() {
               {/* BookingScreen */}
               <Tab.Screen name="Booking" component={BookingScreen}
                 options={{
-          tabBarLabel: ({ color }) => (
+          tabBarLabel: ({ color }) => ( 
             <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
               Booking
             </Text>
@@ -53,6 +53,7 @@ export default function TabNavigation() {
             <FontAwesome name="user" size={size} color={color} />
           ),
         }}
+        
               />
           
             </Tab.Navigator>
