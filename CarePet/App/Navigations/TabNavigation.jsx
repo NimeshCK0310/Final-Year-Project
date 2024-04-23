@@ -41,6 +41,7 @@ export default function TabNavigation() {
         }}
               />
 
+
               {/* ProfileScreen */}
               <Tab.Screen name="Profile" component={ProfileScreen}
                 options={{
@@ -53,7 +54,7 @@ export default function TabNavigation() {
             <FontAwesome name="user" size={size} color={color} />
           ),
         }}
-        
+
               />
           
             </Tab.Navigator>
