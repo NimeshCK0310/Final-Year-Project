@@ -46,7 +46,7 @@ export default function TabNavigation() {
               <Tab.Screen name="Profile" component={ProfileScreen}
                 options={{
           tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
+            <Text style={{ color: color, fontSize: 12, marginTop: -2 }} >
               Profile
             </Text>
           ),
@@ -54,7 +54,6 @@ export default function TabNavigation() {
             <FontAwesome name="user" size={size} color={color} />
           ),
         }}
-
               />
           
             </Tab.Navigator>
