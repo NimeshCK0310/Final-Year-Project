@@ -4,11 +4,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import BookingScreen from "../Screens/BookingScreen/BookingScreen";
 import ProfileScreen from "../Screens/ProfileScreen/ProfileScreen";
 import { FontAwesome } from "@expo/vector-icons";
-import HomeNavigation from "./HomeNavigation";
 import PetCareScreen from "../Screens/PetCare/PetCareScreen";
 import PetShopScreen from "../Screens/PetShop/PetShopScreen";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import HomeNavigation from "./HomeNavigation";
 
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {

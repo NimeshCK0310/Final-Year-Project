@@ -4,9 +4,6 @@ import Header from './Header';
 import Slider from './Slider';
 import Categories from './Categories';
 import BusinessList from './BusinessList';
-import TabNavigation from '../Navigations/TabNavigation';
-import HomeScreen from '../Screens/HomeScreen/HomeScreen';
-
 
 export default function HomeScreen() {
   return (
@@ -34,7 +31,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff', // Set your desired background color
+    backgroundColor: '#fff',
   },
   scrollViewContainer: {
     flexGrow: 1,
@@ -44,5 +41,3 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
 });
-
-
