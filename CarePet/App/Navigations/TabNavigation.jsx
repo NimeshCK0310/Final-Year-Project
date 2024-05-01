@@ -7,12 +7,14 @@ import { FontAwesome } from "@expo/vector-icons";
 import HomeNavigation from "./HomeNavigation";
 import PetCareScreen from "../Screens/PetCare/PetCareScreen";
 import PetShopScreen from "../Screens/PetShop/PetShopScreen";
+import { MaterialIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
-    
+
       {/* HomeScreen */}
       <Tab.Screen
         name="home"
@@ -56,7 +58,7 @@ export default function TabNavigation() {
             </Text>
           ),
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bookmark" size={size} color={color} />
+            <MaterialIcons name="pets" size={size} color={color} />
           ),
         }}
       />
@@ -72,7 +74,7 @@ export default function TabNavigation() {
             </Text>
           ),
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bookmark" size={size} color={color} />
+            <Entypo name="shop" size={size} color={color} />
           ),
         }}
       />
