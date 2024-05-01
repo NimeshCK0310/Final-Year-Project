@@ -1,18 +1,25 @@
-import { View, Text } from "react-native";
-import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import BookingScreen from "../Screens/BookingScreen/BookingScreen";
-import ProfileScreen from "../Screens/ProfileScreen/ProfileScreen";
-import { FontAwesome } from "@expo/vector-icons";
-import HomeNavigation from "./HomeNavigation";
-import PetCareScreen from "../Screens/PetCare/PetCareScreen";
-import PetShopScreen from "../Screens/PetShop/PetShopScreen";
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Text } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import Colors from '../Utils/Colors';
+import HomeScreen from '../Screens/HomeScreen/HomeScreen';
+import BookingScreen from '../Screens/BookingScreen/BookingScreen';
+import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
+import HomeNavigation from './HomeNavigation';
+import BookingNavigation from './BookingNavigation';
+
+
 
 const Tab = createBottomTabNavigator();
+
 export default function TabNavigation() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
-    
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       {/* HomeScreen */}
       <Tab.Screen
         name="home"
@@ -31,8 +38,8 @@ export default function TabNavigation() {
 
       {/* BookingScreen */}
       <Tab.Screen
-        name="Booking"
-        component={BookingScreen}
+        name="booking"
+        component={BookingNavigation}
         options={{
           tabBarLabel: ({ color }) => (
             <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
@@ -45,41 +52,9 @@ export default function TabNavigation() {
         }}
       />
 
-      {/* Petcare Screen */}
-      <Tab.Screen
-        name="PetCare"
-        component={PetCareScreen}
-        options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Pet Care
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bookmark" size={size} color={color} />
-          ),
-        }}
-      />
-
-      {/* PetShop Screen */}
-      <Tab.Screen
-        name="PetShop"
-        component={PetShopScreen}
-        options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Pet Shop
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bookmark" size={size} color={color} />
-          ),
-        }}
-      />
-
       {/* ProfileScreen */}
       <Tab.Screen
-        name="Profile"
+        name="profile"
         component={ProfileScreen}
         options={{
           tabBarLabel: ({ color }) => (
