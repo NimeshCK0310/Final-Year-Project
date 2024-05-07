@@ -54,7 +54,6 @@ export default function BusinessListItem({ business, booking }) {
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     padding: 10,
