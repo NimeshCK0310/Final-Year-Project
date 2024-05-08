@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import BookingScreen from "../Screens/BookingScreen/BookingScreen";
 import ProfileScreen from "../Screens/ProfileScreen/ProfileScreen";
 import { FontAwesome } from "@expo/vector-icons";
@@ -9,25 +9,26 @@ import PetShopScreen from "../Screens/PetShop/PetShopScreen";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import HomeNavigation from "./HomeNavigation";
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import Colors from "../Utils/Colors";
 
 const Tab = createMaterialBottomTabNavigator();
+
 export default function TabNavigation() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
-
+    <Tab.Navigator
+      screenOptions={{ headerShown: false }}
+      barStyle={{ backgroundColor: Colors.Blue}}
+      activeColor="blue"
+      inactiveColor={{ color: Colors.PRIMARY}}
+    >
       {/* HomeScreen */}
       <Tab.Screen
         name="home"
         component={HomeNavigation}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Home
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="home" size={size} color={color} />
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="home" size={25} color={color}  />
           ),
         }}
       />
@@ -37,13 +38,9 @@ export default function TabNavigation() {
         name="Booking"
         component={BookingScreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Booking
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bookmark" size={size} color={color} />
+          tabBarLabel: 'Booking',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="bookmark" size={25} color={color} />
           ),
         }}
       />
@@ -53,13 +50,9 @@ export default function TabNavigation() {
         name="PetCare"
         component={PetCareScreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Pet Care
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="pets" size={size} color={color} />
+          tabBarLabel: 'Pet Care',
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="pets" size={25} color={color} />
           ),
         }}
       />
@@ -69,13 +62,9 @@ export default function TabNavigation() {
         name="PetShop"
         component={PetShopScreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Pet Shop
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <Entypo name="shop" size={size} color={color} />
+          tabBarLabel: 'Pet Shop',
+          tabBarIcon: ({ color }) => (
+            <Entypo name="shop" size={25} color={color} />
           ),
         }}
       />
@@ -85,13 +74,9 @@ export default function TabNavigation() {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12, marginTop: -2 }}>
-              Profile
-            </Text>
-          ),
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="user" size={size} color={color} />
+          tabBarLabel: 'Profile', 
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="user" size={25} color={color} />
           ),
         }}
       />
