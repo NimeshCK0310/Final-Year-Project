@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
   },
 
   subContainer: {
-    width: "111%",
-    backgroundColor: Colors.PRIMARY,
+    width: "100%",
+    backgroundColor: Colors.Blue,
     height: "50%",
     marginTop: -20,
     borderTopStartRadius: 30,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: Colors.White,
+    backgroundColor: Colors.Blue_Light,
     padding: 15,
     borderRadius: 99,
     marginTop: 50,

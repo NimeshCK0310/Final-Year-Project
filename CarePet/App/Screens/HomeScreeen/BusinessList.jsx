@@ -18,7 +18,6 @@ export default function BusinessList() {
            setBusinessList(resp?.businessLists);
         })
     }
-    
   return (
     <View style={{marginTop:10}}>
       <Heading text={'Business List'} isViewAll={true}/>

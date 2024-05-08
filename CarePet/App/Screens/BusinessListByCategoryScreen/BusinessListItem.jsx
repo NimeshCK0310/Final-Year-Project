@@ -49,7 +49,6 @@ export default function BusinessListItem({ business, booking }) {
           </Text>
         )}
       </View>
-      
     </TouchableOpacity>
   );
 }
