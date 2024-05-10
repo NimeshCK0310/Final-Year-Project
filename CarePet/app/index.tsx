@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Login from './Screens/LoginScreen/Login';
+import TabNavigatin from './Navigations/TabNavigation';
+import { NavigationContainer } from '@react-navigation/native';
+import TabNavigation from './Navigations/TabNavigation';
 
 export default function App() {
   // const [fontsLoaded, fontError] = useFonts({
@@ -11,7 +14,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Login/>
+   
+    {/* <Login/> */}
+    <TabNavigation />
+  
+  
       <StatusBar style="auto" />
     </View>
   );

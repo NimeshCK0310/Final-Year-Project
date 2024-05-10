@@ -1,124 +1,17 @@
-// import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-// import React from "react";
-// import Colors from "../../Utils/Colors";
-// import * as WebBrowser from "expo-web-browser";
-// import { useOAuth } from "@clerk/clerk-expo";
-// import { useWarmUpBrowser } from "../../hooks/useWarmUpBrowser";
-// WebBrowser.maybeCompleteAuthSession();
-
-// export default function Login() {
-//   useWarmUpBrowser();
-//   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
-//   const onPress = React.useCallback(async () => {
-//     try {
-//       const { createdSessionId, signIn, signUp, setActive } =
-//         await startOAuthFlow();
-
-//       if (createdSessionId) {
-//         setActive({ session: createdSessionId });
-//       } else {
-//         // Use signIn or signUp for next steps such as MFA
-//       }
-//     } catch (err) {
-//       console.error("OAuth error", err);
-//     }
-//   }, []);
-
-//   return (
-//     <View style={{ justifyContent: "center", alignItems: "center" }}>
-//       <Image
-//         source={require("./../../../assets/Images/Getstart.png")}
-//         style={styles.Getstart}
-//       />
-
-//       <View style={styles.subContainer}>
-//         <Text
-//           style={{
-//             color: Colors.White,
-//             fontSize: 35,
-//             fontWeight: "bold",
-//             textAlign: "center",
-//           }}
-//         >
-//           WELCOME !
-//         </Text>
-
-//         <Text
-//           style={{
-//             color: Colors.White,
-//             fontSize: 27,
-//             fontWeight: "bold",
-//             textAlign: "center",
-//             marginTop: 15,
-//           }}
-//         >
-//           Tailored Care for your Pet At your Fingertips
-//         </Text>
-
-//         <Text
-//           style={{
-//             color: Colors.White,
-//             fontSize: 17,
-//             textAlign: "center",
-//             marginTop: 20,
-//             fontWeight: "bold",
-//           }}
-//         >
-//           Best app to effectively managing your pet's well-being with our
-//           comprehensive carepet app.
-//         </Text>
-
-//         <TouchableOpacity style={styles.button} onPress={onPress}>
-//           <Text
-//             style={{
-//               color: Colors.PRIMARY,
-//               fontSize: 19,
-//               textAlign: "center",
-//               fontWeight: "bold",
-//             }}
-//           >
-//             Let's Get Started
-//           </Text>
-//         </TouchableOpacity>
-//       </View>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   Getstart: {
-//     width: 250,
-//     height: 450,
-//     marginTop: 70,
-//     borderWidth: 4,
-//     borderColor: Colors.BLACK,
-//     borderRadius: 15,
-//   },
-
-//   subContainer: {
-//     width: "100%",
-//     backgroundColor: Colors.PRIMARY,
-//     height: "50%",
-//     marginTop: -20,
-//     borderTopStartRadius: 30,
-//     borderTopEndRadius: 30,
-//     padding: 20,
-//   },
-
-//   button: {
-//     backgroundColor: Colors.White,
-//     padding: 15,
-//     borderRadius: 99,
-//     marginTop: 50,
-//   },
-// });
-
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
 import Colors from '../../Utils/Colors'
 
 export default function Login() {
+  const navigation = useNavigation(); // Initialize navigation
+
+  const handleGetStarted = () => {
+    // Navigate to TabNavigation screen
+    navigation.navigate('TabNavigation');
+  };
+
   return (
     <View>
       <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -129,56 +22,56 @@ export default function Login() {
 
         <View style={styles.subContainer}>
 
-        <Text
-          style={{
-            color: Colors.White,
-            fontSize: 35,
-            fontWeight: "bold",
-            textAlign: "center",
-          }}
-        >
-          WELCOME !
-        </Text>
-
-        <Text
-          style={{
-            color: Colors.White,
-            fontSize: 27,
-            fontWeight: "bold",
-            textAlign: "center",
-            marginTop: 15,
-          }}
-        >
-          Tailored Care for your Pet At your Fingertips
-        </Text>
-
-        <Text
-          style={{
-            color: Colors.White,
-            fontSize: 17,
-            textAlign: "center",
-            marginTop: 20,
-            fontWeight: "bold",
-          }}
-        >
-          Best app to effectively managing your pet's well-being with our
-          comprehensive carepet app.
-        </Text>
-        <TouchableOpacity style={styles.button} >
-         <Text
+          <Text
             style={{
               color: Colors.White,
-              fontSize: 22,
+              fontSize: 35,
+              fontWeight: "bold",
               textAlign: "center",
+            }}
+          >
+            WELCOME !
+          </Text>
+
+          <Text
+            style={{
+              color: Colors.White,
+              fontSize: 27,
+              fontWeight: "bold",
+              textAlign: "center",
+              marginTop: 15,
+            }}
+          >
+            Tailored Care for your Pet At your Fingertips
+          </Text>
+
+          <Text
+            style={{
+              color: Colors.White,
+              fontSize: 17,
+              textAlign: "center",
+              marginTop: 20,
               fontWeight: "bold",
             }}
           >
-            Let's Get Started
+            Best app to effectively managing your pet's well-being with our
+            comprehensive carepet app.
           </Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={handleGetStarted}>
+            <Text
+              style={{
+                color: Colors.White,
+                fontSize: 22,
+                textAlign: "center",
+                fontWeight: "bold",
+              }}
+            >
+              Let's Get Started
+            </Text>
+          </TouchableOpacity>
 
         </View>
-        
+
       </View>
     </View>
   )
@@ -194,19 +87,17 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
 
-    subContainer: {
+  subContainer: {
     width: "100%",
     backgroundColor: Colors.Blue,
     height: "50%",
     marginTop: -30,
-    // borderTopStartRadius: 30,
-    // borderTopEndRadius: 30,
     borderRadius: 99,
     borderTopStartRadius: 30,
     padding: 20,
   },
 
-    button: {
+  button: {
     backgroundColor: Colors.Blue_Light,
     padding: 15,
     borderRadius: 99,
@@ -216,5 +107,3 @@ const styles = StyleSheet.create({
   },
 
 })
-
-
