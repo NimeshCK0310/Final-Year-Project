@@ -15,8 +15,8 @@ export default function App() {
   return (
     <View style={styles.container}>
    
-    {/* <Login/> */}
-    <TabNavigation />
+    <Login/>
+    {/* <TabNavigation /> */}
   
   
       <StatusBar style="auto" />
