@@ -1,0 +1,6 @@
+0 Acne
+1 Atopic Dermatitis
+2 Eczema
+3 Seborrheic Keratoses
+4 Tinea Ringworm
+5 Nomal
