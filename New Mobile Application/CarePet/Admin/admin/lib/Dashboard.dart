@@ -1,9 +1,8 @@
-
-
 import 'package:admin/AdminLogin/admin_auth.dart';
 import 'package:admin/Doctors/chanel.dart';
 import 'package:admin/Home/Popular_News.dart';
 import 'package:admin/Location/admin_panel.dart';
+import 'package:admin/Trainers/train.dart';
 import 'package:admin/YoutubeVideo/addVideo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -33,11 +32,10 @@ class AdminDashboard extends StatelessWidget {
 
   void _logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
-   Navigator.push(
-                // ignore: use_build_context_synchronously
-                context,
-                MaterialPageRoute(builder: (context) => const AdminSignIn())
-              );
+    Navigator.push(
+        // ignore: use_build_context_synchronously
+        context,
+        MaterialPageRoute(builder: (context) => const AdminSignIn()));
   }
 
   @override
@@ -65,7 +63,8 @@ class AdminDashboard extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AdminPanel(title: 'Locations')),
+                MaterialPageRoute(
+                    builder: (context) => const AdminPanel(title: 'Locations')),
               );
             },
           ),
@@ -76,18 +75,32 @@ class AdminDashboard extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const VideoManagementPage()),
+                MaterialPageRoute(
+                    builder: (context) => const VideoManagementPage()),
               );
             },
           ),
           DashboardCard(
-            title: 'Doctors',
+            title: 'VETRANALY',
             icon: Icons.medical_services,
             color: Colors.pink,
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const DoctorManagementPage()),
+                MaterialPageRoute(
+                    builder: (context) => const DoctorManagementPage()),
+              );
+            },
+          ),
+          DashboardCard(
+            title: 'TRAINERS',
+            icon: Icons.medical_information,
+            color: Colors.pink,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const trainPage()),
               );
             },
           ),
@@ -102,7 +115,6 @@ class AdminDashboard extends StatelessWidget {
               );
             },
           ),
-
         ],
       ),
     );
@@ -131,9 +143,10 @@ class DashboardCard extends StatelessWidget {
       ),
       elevation: 5,
       child: InkWell(
-        onTap: onTap ?? () {
-          print('Card tapped.');
-        },
+        onTap: onTap ??
+            () {
+              print('Card tapped.');
+            },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -150,7 +163,8 @@ class DashboardCard extends StatelessWidget {
             const SizedBox(height: 8.0),
             const Text(
               'View | Add | Delete',
-              style: TextStyle(color: Colors.grey, fontSize: 12), // Reduced font size
+              style: TextStyle(
+                  color: Colors.grey, fontSize: 12), // Reduced font size
             ),
           ],
         ),

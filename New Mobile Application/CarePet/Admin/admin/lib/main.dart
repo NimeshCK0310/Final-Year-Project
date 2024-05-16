@@ -1,24 +1,19 @@
-
 import 'package:admin/AdminLogin/admin_auth.dart';
 import 'package:admin/Dashboard.dart';
 //import 'package:admin/admin_panel.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: const FirebaseOptions(
-  apiKey: "AIzaSyCp4GfztZhq-YlkAoMzI58DBxaUCOSnDXE",
-  projectId: "facediseasesapp-635d0",
-  messagingSenderId: "1072306408314",
-  appId: "1:1072306408314:web:10705a8c7e4ca8f7aae4c3",));
-    
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyAW59cksebjXkxE2RTth1-DCIFbgXse-FY",
+          projectId: "carepet-b8bd3",
+          messagingSenderId: "388589472841",
+          appId: "1:388589472841:web:2e23c0bb91ef0d9c8c8398"));
 
-runApp( const MyApp());
-
-  
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -31,9 +26,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const AdminSignIn(),
-        '/admin': (context) =>  const AdminDashboard(),
+        '/admin': (context) => const AdminDashboard(),
       },
     );
   }
 }
-
