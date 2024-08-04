@@ -13,7 +13,6 @@ CLASSES = ['Acne', 'Atopic Dermatitis', 'Eczema', 'Seborrheic Keratoses', 'Tinea
 IMAGE_SIZE = 224
 
 
-
 def preprocess_frame(frame):
     """
     Preprocess the frame from the camera to the format expected by the model.
